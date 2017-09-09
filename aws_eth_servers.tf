@@ -12,7 +12,7 @@ resource "aws_lightsail_instance" "Ethereum_Master" {
   connection {
     type     = "ssh"
     user     = "ubuntu"
-    password = "${var.root_password}"
+    private_key = "${"file(/home/jp/.ssh/aws.pem")"
   }
 
   provisioner "remote-exec" {
