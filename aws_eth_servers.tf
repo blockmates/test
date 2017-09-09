@@ -8,6 +8,12 @@ resource "aws_lightsail_instance" "Ethereum_Master" {
     source      = "/mnt/c/setup.sh"
     destination = "/tmp/setup.sh"
   }
+  
+  connection {
+    type     = "ssh"
+    user     = "ubuntu"
+    password = "${var.root_password}"
+  }
 
   provisioner "remote-exec" {
     inline = [
