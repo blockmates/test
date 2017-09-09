@@ -5,7 +5,7 @@ resource "aws_lightsail_instance" "Ethereum_Master" {
   bundle_id         = "nano_1_0"
   
    provisioner "file" {
-    source      = "/mnt/c/Users/Jean-PaulvanderHam/OneDrive\ -\ j-enable/Blockchain/setup.sh"
+    source      = "/mnt/c/setup.sh"
     destination = "/tmp/setup.sh"
   }
 
