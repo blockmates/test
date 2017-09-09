@@ -3,6 +3,18 @@ resource "aws_lightsail_instance" "Ethereum_Master" {
   availability_zone = "eu-central-1a"
   blueprint_id      = "ubuntu_16_04"
   bundle_id         = "nano_1_0"
+  
+   provisioner "file" {
+    source      = "/mnt/c/Users/Jean-PaulvanderHam/OneDrive\ -\ j-enable/Blockchain/setup.sh"
+    destination = "/tmp/setup.sh"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /setup/script.sh",
+      "/tmp/setup.sh args",
+    ]
+  }
 } 
 
 resource "aws_lightsail_instance" "Ethereum_Slave1" {
@@ -11,4 +23,5 @@ resource "aws_lightsail_instance" "Ethereum_Slave1" {
   blueprint_id      = "ubuntu_16_04"
   bundle_id         = "nano_1_0"
 } 
+
 # /mnt/c/Users/Jean-PaulvanderHam/OneDrive\ -\ j-enable/Blockchain/setup.sh
