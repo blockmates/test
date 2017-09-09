@@ -11,3 +11,4 @@ resource "aws_lightsail_instance" "Ethereum_Slave1" {
   blueprint_id      = "ubuntu_16_04"
   bundle_id         = "nano_1_0"
 } 
+# /mnt/c/Users/Jean-PaulvanderHam/OneDrive\ -\ j-enable/Blockchain/setup.sh
